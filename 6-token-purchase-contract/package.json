@@ -33,7 +33,8 @@
   },
   "scripts": {
     "test": "npx truffle test --gasPrice 0",
-    "start": "npx truffle compile && watchify app.js -o bundle.js -v"
+    "start2": "npx truffle compile && watchify app.js -o bundle.js -v",
+    "start": "watchify app.js -o bundle.js -v"
   },
   "author": "facuspagnuolo",
   "license": "ISC"
