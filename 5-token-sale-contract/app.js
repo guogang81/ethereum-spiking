@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import contract from 'truffle-contract';
 
 // Instance Web3 using localhost testrpc
-const provider = new Web3.providers.HttpProvider("http://localhost:9545");
+const provider = new Web3.providers.HttpProvider("http://localhost:8545");
 const web3 = new Web3(provider);
 
 // Set up contracts APIs

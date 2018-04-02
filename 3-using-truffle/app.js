@@ -2,7 +2,8 @@ import $ from 'jquery';
 import Web3 from 'web3';
 
 // Instance Web3 using localhost testrpc
-const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+console.log('aa');
 
 // This is an interface of the MyToken contract, called ABI, that we will interact with it
 const myTokenContractABI = require('./build/contracts/MyToken.json').abi;

@@ -8,3 +8,8 @@
 2. Open `index.html` and start playing, 
 
 ***Note**: Remember you will need to use the deployed token address given by Truffle*
+
+truffle compile --all
+truffle test
+truffle migrate --reset
+
