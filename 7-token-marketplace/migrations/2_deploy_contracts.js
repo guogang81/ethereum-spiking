@@ -10,8 +10,7 @@ module.exports = function(deployer) {
   var myToken;
   deployer.deploy(MyToken).then(function(instance) {
 	  myToken = instance;
-	  deployer.deploy(TokenSale, myToken, 10).then(function(instance) {
-		  deployer.deploy(TokenPurchase, myToken, 10);
-	  });
+	  deployer.deploy(TokenSale, myToken, 10);
+	  deployer.deploy(TokenPurchase, myToken, 10);
   });
 };

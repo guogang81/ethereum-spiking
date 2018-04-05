@@ -41,5 +41,8 @@
     "start": "watchify app.js -o bundle.js -v"
   },
   "author": "facuspagnuolo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "babel-register": "^6.26.0"
+  }
 }

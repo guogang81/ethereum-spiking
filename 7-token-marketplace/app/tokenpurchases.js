@@ -46,6 +46,7 @@ const TokenPurchases = {
       const response = await tokenPurchase.claim({ from: seller, gas: GAS })
       Accounts.update(erc20)
       Transactions.add(response.tx)
+      this.update(tokenPurchase)
     } catch(error) { showError(error) }
   },
 
