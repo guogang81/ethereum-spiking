@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import contract from 'truffle-contract';
 
 // Instance Web3 using localhost testrpc
-const provider = new Web3.providers.HttpProvider("http://localhost:9545");
+const provider = new Web3.providers.HttpProvider("http://localhost:8545");
 const web3 = new Web3(provider);
 
 // Set up contracts APIs
@@ -14,7 +14,7 @@ TokenPurchase.setProvider(provider);
 
 // Default variables
 let myToken = null;                  // we will keep a reference of the contract once deployed
-const GAS = 1000000;                 // amount of gas to use for the transaction
+const GAS = 6700000;                 // amount of gas to use for the transaction
 
 // Function to show an error message
 const showError = error => {
@@ -135,8 +135,9 @@ $('#sell').click(() => {
       myToken.approve(tokenPurchase.address, amount, { from: sellerAddress, gas: GAS }).then(approval => {
         addTransaction(approval.transactionHash);
         synchAccounts();
-        tokenPurchase.claim({ from: seller, gas: GAS }).then(claim => {
+        tokenPurchase.claim({ from: sellerAddress, gas: GAS }).then(claim => {
           addTransaction(claim.tx);
+		  updateTokenPurchaseContractStatus(tokenPurchase);
           synchAccounts();
         }).catch(showError);
       }).catch(showError);

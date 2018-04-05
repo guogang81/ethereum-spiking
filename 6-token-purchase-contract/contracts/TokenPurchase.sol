@@ -21,6 +21,10 @@ contract TokenPurchase is Ownable {
   function priceInWei() public constant returns(uint256) {
     return this.balance;
   }
+  
+  function tokenPurchaseOpened() public constant returns(bool) {
+	return opened;
+  }
 
   function () public payable onlyOwner {
     require(msg.value > 0);
