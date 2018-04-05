@@ -8,7 +8,7 @@ contract('TokenPurchase', accounts => {
     const myTokensInitialAmount = 100
 
     beforeEach(async function() {
-      myToken = await MyToken.new(myTokensInitialAmount, { from: owner })
+      myToken = await MyToken.new({ from: owner })
     })
 
     describe('given a token purchase contract', async function () {
